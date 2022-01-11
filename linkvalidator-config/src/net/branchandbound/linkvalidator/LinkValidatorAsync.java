@@ -1,5 +1,6 @@
 package net.branchandbound.linkvalidator;
 
+import javax.net.ssl.SSLContext;
 import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -94,6 +95,14 @@ public class LinkValidatorAsync {
         List<URI> uris = cookieManager.getCookieStore().getURIs();
 
         System.out.println(uris);
+
+        //SSLContext
+        HttpClient.newBuilder()
+                .sslContext(SSLContext.getDefault())
+                .build();
+
+
+
 
 
 
