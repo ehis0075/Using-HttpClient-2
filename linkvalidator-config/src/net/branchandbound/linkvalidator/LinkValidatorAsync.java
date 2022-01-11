@@ -103,6 +103,24 @@ public class LinkValidatorAsync {
 
 
 
+        //Security: Http Basic Auth
+        //Authenticator
+        HttpClient.newBuilder().authenticator(
+              new Authenticator() {
+                  protected PasswordAuthentication getPasswordAuthenticator() {
+                      return new PasswordAuthentication("user", "password" .toCharArray());
+                  }
+              }
+        ).build();
+
+        //Proxy : configuring a proxy server with httpClient
+        HttpClient.newBuilder().proxy(
+                ProxySelector.of(new InetSocketAddress("proxyserver.com", 8080)) //instrcting the HttpClient to proxy all reqt to proxyserver.com
+        ).build();
+
+
+
+
 
 
 
