@@ -103,8 +103,10 @@ public class LinkValidatorAsync {
 
 
 
+        // TLS is supported when calling HttpSURL
         //Security: Http Basic Auth
         //Authenticator
+        //override authenticator to return a username and password to be used in basic auth
         HttpClient.newBuilder().authenticator(
               new Authenticator() {
                   protected PasswordAuthentication getPasswordAuthenticator() {
